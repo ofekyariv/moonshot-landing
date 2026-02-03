@@ -739,9 +739,11 @@
             <div class="section-label">Get in Touch</div>
             <h2>Let's talk about your app</h2>
             <p>No commitment, no pressure. Just a conversation about what's possible.</p>
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact">
-                <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <form class="contact-form" action="https://formsubmit.co/ofek.moonshot@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Moonshot Landing Page Contact">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://ofekyariv.github.io/moonshot-landing/?submitted=true">
+                <input type="text" name="_honey" style="display:none">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
@@ -786,5 +788,20 @@
             <p class="footer-copy">© 2026 Moonshot. NYC, USA.</p>
         </div>
     </footer>
+    <script>
+        // Show success message if redirected from form submission
+        if (window.location.search.includes('submitted=true')) {
+            const form = document.querySelector('.contact-form');
+            form.innerHTML = `
+                <div style="text-align: center; padding: 60px 20px;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🎉</div>
+                    <h3 style="margin-bottom: 16px;">Message sent!</h3>
+                    <p style="color: var(--text-secondary);">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+                </div>
+            `;
+            // Scroll to form
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
