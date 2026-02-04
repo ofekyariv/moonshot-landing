@@ -3,805 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonshot — Partner with Indie Developers</title>
-    <meta name="description" content="Moonshot helps indie app developers monetize, scale, or find a great exit — on your terms.">
+    <title>Moonshot</title>
+    <meta name="description" content="I help indie app developers make money from their apps.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a24;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --accent: #6366f1;
-            --accent-hover: #818cf8;
-            --gradient-start: #6366f1;
-            --gradient-end: #a855f7;
-            --border: #2a2a3a;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.7;
+            font-size: 17px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 80px 24px;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 20px 0;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0 80px;
-            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.2;
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
             margin-bottom: 24px;
+            line-height: 1.3;
         }
 
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
+        h2 {
             font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 600px;
+            font-weight: 600;
+            color: #fff;
+            margin: 48px 0 16px;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+        p {
+            margin-bottom: 16px;
+            color: #a3a3a3;
+        }
+
+        a {
+            color: #a78bfa;
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        a:hover {
+            text-decoration: underline;
         }
 
-        /* Problem Section */
-        .problem {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-        }
-
-        .section-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-        }
-
-        .problem h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        .problem-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .problem-item {
-            padding: 24px;
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .problem-item .icon {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-
-        .problem-item h3 {
+        .intro {
+            color: #e5e5e5;
             font-size: 1.1rem;
-            margin-bottom: 8px;
+            margin-bottom: 32px;
         }
 
-        .problem-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Paths Section */
-        .paths {
-            padding: 100px 0;
-        }
-
-        .paths h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .paths > .container > p {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .paths-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .path-card {
-            padding: 40px 32px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .path-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-        }
-
-        .path-card.featured {
-            border-color: var(--accent);
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, var(--bg-card) 100%);
-        }
-
-        .path-card .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--accent);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 20px;
-            margin-bottom: 16px;
-        }
-
-        .path-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        .path-card .tagline {
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .path-card ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 24px;
-        }
-
-        .path-card li {
-            padding: 8px 0;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .path-card li::before {
-            content: "✓";
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 1.1rem;
-        }
-
-        .credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .credential {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            background: var(--bg-card);
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-
-        /* How It Works */
-        .process {
-            padding: 100px 0;
-        }
-
-        .process h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-        }
-
-        .faq h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 24px;
-            max-width: 1000px;
-            margin: 0 auto;
+        .section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid #262626;
         }
 
         .faq-item {
-            padding: 24px;
-            background: var(--bg-card);
+            margin-bottom: 32px;
+        }
+
+        .faq-q {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .faq-a {
+            color: #a3a3a3;
+        }
+
+        .contact {
+            margin-top: 64px;
+            padding: 32px;
+            background: #141414;
             border-radius: 12px;
-            border: 1px solid var(--border);
         }
 
-        .faq-item h3 {
-            font-size: 1rem;
-            margin-bottom: 12px;
-            color: var(--text-primary);
+        .contact p {
+            margin-bottom: 8px;
         }
 
-        .faq-item p {
-            color: var(--text-secondary);
+        .name {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .title {
+            color: #737373;
             font-size: 0.95rem;
         }
 
-        /* Contact Form */
-        .contact {
-            padding: 100px 0;
+        .links {
+            margin-top: 16px;
         }
 
-        .contact h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 16px;
+        .links a {
+            margin-right: 24px;
         }
 
-        .contact > .container > p {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: #a3a3a3;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
+        li {
             margin-bottom: 8px;
+        }
+
+        strong {
+            color: #e5e5e5;
             font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .footer-copy {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-image {
-                max-width: 200px;
-                margin: 0 auto;
-            }
-
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 24px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">🚀 Moonshot</div>
-            <ul class="nav-links">
-                <li><a href="#paths">What We Offer</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">How It Works</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <h1>I help indie developers make money from their apps.</h1>
+        
+        <p class="intro">
+            You built something people use. But you're not making money from it — 
+            maybe you don't have time, maybe you don't know how, maybe it just feels weird.
+            I can help.
+        </p>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Your app deserves more than a <span>slow death</span> in the Play Store</h1>
-                <p>We help indie developers monetize, scale, or find a great exit — on your terms. Partnership, not acquisition. Built by builders, for builders.</p>
-                <a href="#contact" class="cta-button">Let's Talk →</a>
-            </div>
-        </div>
-    </section>
+        <p>
+            I'm Ofek. I work on Instagram at Meta during the day. 
+            Before that, I spent years at Unity helping apps monetize.
+            Now I'm looking for a few indie developers to partner with.
+        </p>
 
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <div class="section-label">The Reality</div>
-            <h2>You built something amazing. But...</h2>
-            <div class="problem-list">
-                <div class="problem-item">
-                    <div class="icon">😓</div>
-                    <h3>Burnout is real</h3>
-                    <p>Side project grind on top of a day job. Every feature request feels like a burden.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="icon">💸</div>
-                    <h3>Monetization feels wrong</h3>
-                    <p>Ads feel like selling out. Premium tiers are complicated. So you just... don't.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="icon">📉</div>
-                    <h3>Growth has stalled</h3>
-                    <p>No time for marketing. The app that used to excite you now collects dust.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="icon">🤝</div>
-                    <h3>Acquisition offers suck</h3>
-                    <p>Lowball offers from people who don't understand what you built.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Paths Section -->
-    <section class="paths" id="paths">
-        <div class="container">
-            <div class="section-label">What We Offer</div>
-            <h2>Three paths forward</h2>
-            <p>Every app is different. We tailor our approach to what makes sense for you.</p>
-            <div class="paths-grid">
-                <div class="path-card featured">
-                    <span class="badge">Most Popular</span>
-                    <h3>Partnership</h3>
-                    <p class="tagline">Revenue share model</p>
-                    <ul>
-                        <li>We handle monetization & growth</li>
-                        <li>You keep 70% of new revenue</li>
-                        <li>Stay as involved as you want</li>
-                        <li>Your IP stays yours — always</li>
-                        <li>No upfront cost</li>
-                    </ul>
-                </div>
-                <div class="path-card">
-                    <h3>Acquisition</h3>
-                    <p class="tagline">Fair exit on your terms</p>
-                    <ul>
-                        <li>Dignified end for your project</li>
-                        <li>We continue supporting users</li>
-                        <li>Fair valuation, no lowballs</li>
-                        <li>Clean handoff process</li>
-                        <li>Your legacy preserved</li>
-                    </ul>
-                </div>
-                <div class="path-card">
-                    <h3>Advisory</h3>
-                    <p class="tagline">Guidance, not takeover</p>
-                    <ul>
-                        <li>Monetization strategy</li>
-                        <li>Technical architecture review</li>
-                        <li>Growth playbook</li>
-                        <li>You stay in control</li>
-                        <li>Flexible engagement</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">👨‍💻</div>
-                <div class="about-text">
-                    <div class="section-label">Built by a Builder</div>
-                    <h2>Hey, I'm Ofek</h2>
-                    <p>I'm an Android Engineer at Meta (Instagram), working on apps used by 1.65 billion people. Before that, I led monetization optimization at Unity/IronSource for apps with 15M+ daily users.</p>
-                    <p>I've spent years building apps — and watching great ones die. Talented developers burn out. Amazing projects get abandoned. Users lose tools they love.</p>
-                    <p><strong>Moonshot exists because it doesn't have to be this way.</strong></p>
-                    <div class="credentials">
-                        <div class="credential">🏢 Meta Engineer</div>
-                        <div class="credential">📱 10+ Years Android</div>
-                        <div class="credential">📈 Unity/IronSource Alum</div>
-                        <div class="credential">🌍 NYC Based</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-label">The Process</div>
+        <div class="section">
             <h2>How it works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Connect</h3>
-                    <p>We reach out (or you do). No pressure, just a conversation.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Understand</h3>
-                    <p>30-minute call to learn about your app and your situation.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Propose</h3>
-                    <p>Custom proposal within a week. Partnership or acquisition — your choice.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Partner</h3>
-                    <p>Transparent terms, ongoing support. We grow together.</p>
-                </div>
+            <p>
+                Simple revenue share. I do the monetization work — 
+                premium tiers, pricing, implementation. You keep building 
+                (or don't, up to you). We split the new revenue 70/30. You keep 70%.
+            </p>
+            <p>
+                No upfront cost. No selling your app. You keep full ownership.
+                I only make money if you make money.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>What I'm looking for</h2>
+            <ul>
+                <li>Apps with real users (10K+ monthly)</li>
+                <li>Little or no monetization currently</li>
+                <li>Developer who wants help, not a buyer</li>
+            </ul>
+            <p>
+                I'm not a private equity firm. I'm not trying to acquire your app and gut it.
+                I just want to help good apps make money.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Questions</h2>
+            
+            <div class="faq-item">
+                <p class="faq-q">Why would I give up 30%?</p>
+                <p class="faq-a">
+                    30% of something is better than 100% of nothing. 
+                    Most indie apps make $0. If I can help you make $5K/month, 
+                    you're keeping $3,500 you didn't have before.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">What if I want to sell later?</p>
+                <p class="faq-a">
+                    Your app, your call. The partnership doesn't prevent a sale.
+                    If anything, an app making money sells for more.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Will you add annoying ads?</p>
+                <p class="faq-a">
+                    No. I hate that stuff too. Premium features, not ad spam.
+                    Your users won't hate you.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">How much work is it for me?</p>
+                <p class="faq-a">
+                    As much or as little as you want. Some developers stay involved, 
+                    some just want the checks. Both are fine.
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-label">FAQ</div>
-            <h2>Questions you might have</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Are you going to ruin my app with ads?</h3>
-                    <p>No. We respect what you built. Monetization means thoughtful premium features, not ad spam. Your users won't hate you.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What's in it for you?</h3>
-                    <p>Revenue share on partnerships (we keep 30% of incremental revenue). For acquisitions, we grow apps we believe in. Aligned incentives.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What happens to my users?</h3>
-                    <p>They stay. We don't do acqui-hires. The app continues, better supported. That's the whole point.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do I have to sell my app?</h3>
-                    <p>No. Partnership means you stay involved — as much or as little as you want. Acquisition is entirely optional.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if my app is small?</h3>
-                    <p>We work with apps from 15K to 1M monthly users. Great products at any scale deserve support.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How is this different from PE firms?</h3>
-                    <p>I'm a developer, not a finance guy. I'll actually look at your code. I care about the product, not just the numbers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-label">Get in Touch</div>
-            <h2>Let's talk about your app</h2>
-            <p>No commitment, no pressure. Just a conversation about what's possible.</p>
-            <form class="contact-form" action="https://formsubmit.co/ofek.moonshot@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New Moonshot Landing Page Contact">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ofekyariv.github.io/moonshot-landing/?submitted=true">
-                <input type="text" name="_honey" style="display:none">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="app">App Name</label>
-                    <input type="text" id="app" name="app" placeholder="Your app's name">
-                </div>
-                <div class="form-group">
-                    <label for="link">GitHub or Play Store Link</label>
-                    <input type="url" id="link" name="link" placeholder="https://...">
-                </div>
-                <div class="form-group">
-                    <label for="interest">What are you looking for?</label>
-                    <select id="interest" name="interest">
-                        <option value="partnership">Partnership (revenue share)</option>
-                        <option value="acquisition">Acquisition (exit)</option>
-                        <option value="advisory">Advisory (guidance)</option>
-                        <option value="curious">Just curious</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Anything else?</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your situation..."></textarea>
-                </div>
-                <button type="submit" class="submit-button">Send Message →</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="mailto:ofek.moonshot@gmail.com">ofek.moonshot@gmail.com</a>
+        <div class="contact">
+            <p class="name">Ofek Yariv</p>
+            <p class="title">Android Engineer @ Meta</p>
+            <div class="links">
+                <a href="mailto:ofek.moonshot@gmail.com">Email</a>
                 <a href="https://linkedin.com/in/ofek-yariv" target="_blank">LinkedIn</a>
             </div>
-            <p class="footer-copy">© 2026 Moonshot. NYC, USA.</p>
         </div>
-    </footer>
-    <script>
-        // Show success message if redirected from form submission
-        if (window.location.search.includes('submitted=true')) {
-            const form = document.querySelector('.contact-form');
-            form.innerHTML = `
-                <div style="text-align: center; padding: 60px 20px;">
-                    <div style="font-size: 4rem; margin-bottom: 20px;">🎉</div>
-                    <h3 style="margin-bottom: 16px;">Message sent!</h3>
-                    <p style="color: var(--text-secondary);">Thanks for reaching out. I'll get back to you within 24 hours.</p>
-                </div>
-            `;
-            // Scroll to form
-            form.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    </div>
 </body>
 </html>
